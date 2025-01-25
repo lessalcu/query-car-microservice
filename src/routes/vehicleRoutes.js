@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const vehicleController = require('../controllers/vehicleController');
 
-// Ruta para consultar todos los vehículos
+// Route to query all vehicles
 router.get('/vehicles', vehicleController.getAllVehicles);
 
-// Ruta para consultar un vehículo por ID
+// Route to query a vehicle by ID
 router.get('/vehicle/:id', vehicleController.getVehicleById);
 
 module.exports = router;
