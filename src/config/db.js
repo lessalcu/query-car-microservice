@@ -1,12 +1,12 @@
-require('dotenv').config();  // Cargar variables de entorno
+require('dotenv').config();  // Load environment variables
 
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-    host: process.env.DB_HOST || 'localhost', // Obtener desde el .env o usar 'localhost'
-    user: process.env.DB_USER || 'root', // Usuario de la base de datos
-    password: process.env.DB_PASSWORD || 'Lesly1105', // Contraseña de la base de datos
-    database: process.env.DB_NAME || 'CarDB' // Nombre de la base de datos
+    host: process.env.DB_HOST || 'localhost', // Get from .env or use 'localhost'
+    user: process.env.DB_USER || 'root', // Database user
+    password: process.env.DB_PASSWORD || 'Lesly1105', // Database password
+    database: process.env.DB_NAME || 'CarDB' // Database name
 });
 
 connection.connect((err) => {
