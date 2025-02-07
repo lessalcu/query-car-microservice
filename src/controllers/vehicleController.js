@@ -1,6 +1,5 @@
 const connection = require('../config/db');
 
-// Function to query a vehicle by its id
 exports.getVehicleById = (req, res) => {
     const { id } = req.params;
     connection.query('SELECT * FROM Cars WHERE id = ?', [id], (err, results) => {
