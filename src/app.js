@@ -1,17 +1,16 @@
 const express = require('express');
-const dotenv = require('dotenv');
+const app = express();
 const vehicleRoutes = require('./routes/vehicleRoutes');
+const dotenv = require('dotenv');
 
 dotenv.config();
-
-const app = express();
-const PORT = process.env.PORT || 3003;
 
 app.use(express.json());
 
 // Routes
 app.use('/api', vehicleRoutes);
 
+const PORT = process.env.PORT || 3003;
 // Start server
 app.listen(PORT, () => {
     console.log(`Query Vehicle microservice running on port ${PORT}`);
