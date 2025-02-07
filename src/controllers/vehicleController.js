@@ -1,16 +1,5 @@
 const connection = require('../config/db');
 
-// Function to query all vehicles
-exports.getAllVehicles = (req, res) => {
-    connection.query('SELECT * FROM Cars', (err, results) => {
-        if (err) {
-            console.error('Error retrieving vehicles:', err);
-            return res.status(500).json({ message: 'Error retrieving vehicles', error: err });
-        }
-        return res.status(200).json(results); // Returns all vehicles
-    });
-};
-
 // Function to query a vehicle by its id
 exports.getVehicleById = (req, res) => {
     const { id } = req.params;
