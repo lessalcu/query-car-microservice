@@ -13,3 +13,13 @@ exports.getVehicleById = (req, res) => {
         return res.status(200).json(results[0]); // Return the found vehicle
     });
 };
+
+exports.getAllVehicles = (req, res) => {
+    connection.query('SELECT * FROM Cars', (err, results) => {
+        if (err) {
+            console.error('Error retrieving vehicles:', err);
+            return res.status(500).json({ message: 'Error retrieving vehicles', error: err });
+        }
+        return res.status(200).json(results);
+    });
+};
